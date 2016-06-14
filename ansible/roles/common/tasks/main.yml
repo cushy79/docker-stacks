@@ -1,0 +1,6 @@
+---
+- user: name=apache
+- group: name=apache
+- template: src=test.txt.j2 dest=/etc/test1.txt owner=apache group=apache mode=644
+- template: src=test.txt.j2 dest=/etc/test2.txt owner=apache group=apache mode=0644
+- template: src=test.txt.j2 dest=/etc/test3.txt owner=apache group=apache

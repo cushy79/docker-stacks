@@ -1,0 +1,23 @@
+version: '2'
+services:
+  jupyter:
+    build:
+      context: jupyter
+      #dockerfile: pyspark.dockerfile
+    volumes:
+      - ".:/notebooks"
+    ports:
+      - "8888:8888"
+    links:
+      - "db:db"
+    depends_on:
+      - db
+    restart: always
+  db:
+    build:
+      context: mysql
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: test

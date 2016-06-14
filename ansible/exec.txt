@@ -1,0 +1,1 @@
+docker build -t cushy79/ansible . && docker run -it cushy79/ansible /bin/bash -lc "ansible-playbook site.yml && /bin/bash"
