@@ -5,11 +5,9 @@ services:
       context: jupyter
       #dockerfile: pyspark.dockerfile
     volumes:
-      - ".:/notebooks"
+      - "./jupyter/notebooks:/notebooks"
     ports:
-      - "8888:8888"
-    links:
-      - "db:db"
+      - "9000:8888"
     depends_on:
       - db
     restart: always
