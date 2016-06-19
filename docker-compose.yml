@@ -2,6 +2,7 @@ version: '2'
 services:
   jupyter:
     build:
+      image: cushy79/docker-stacks:latest
       context: jupyter
       #dockerfile: pyspark.dockerfile
     volumes:
